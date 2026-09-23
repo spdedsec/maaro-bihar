@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #F6EEDD;
+  color: #211712;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.dark body {
+  background-color: #1A120E;
+  color: #F2E7D3;
+}
+
+.texture {
+  background-image:
+    radial-gradient(rgba(124,29,42,0.05) 1px, transparent 1px),
+    radial-gradient(rgba(124,29,42,0.04) 1px, transparent 1px);
+  background-size: 22px 22px, 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+.dark .texture {
+  background-image:
+    radial-gradient(rgba(224,172,76,0.05) 1px, transparent 1px),
+    radial-gradient(rgba(224,172,76,0.04) 1px, transparent 1px);
+  background-size: 22px 22px, 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+
+.tag-card {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+.tag-hole {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #F6EEDD;
+  border: 1px solid rgba(33,23,18,0.25);
+}
+.dark .tag-hole {
+  background: #1A120E;
+  border-color: rgba(242,231,211,0.25);
+}
+
+.divider-thread {
+  height: 2px;
+  background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 10px);
+  opacity: 0.5;
+}
+
+::selection {
+  background: #C8912F;
+  color: #1A120E;
+}
+
+:focus-visible {
+  outline: 2px solid #C8912F;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
